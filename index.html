@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Learning Neural Differential Algebraic Equations via Operator Splitting.">
-  <meta name="keywords" content="NeuralDAEs, Operator Splitting, Neuromancer library">
+        content="piMPC: A Parallel-in-horizon and Construction-free NMPC Solver.">
+  <meta name="keywords" content="Model predictive control, quadratic program, ADMM, parallel-in-horizon.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Learning Neural Differential Algebraic Equations via Operator Splitting</title>
+  <title>piMPC: A Parallel-in-horizon and Construction-free NMPC Solver</title>
 
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -134,8 +134,13 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-Differential algebraic equations (DAEs) describe the temporal evolution of systems that obey both differential and algebraic constraints. Of particular interest are systems that contain implicit relationships between their components, such as conservation laws. Here, we present an Operator Splitting (OS) numerical integration scheme for learning unknown components of DAEs from time-series data. In this work, we show that the proposed OS-based time-stepping scheme is suitable for relevant system-theoretic data-driven modeling tasks. Presented examples include (i) the inverse problem of tank-manifold dynamics and (ii) discrepancy modeling of a network of pumps, tanks, and pipes. Our experiments demonstrate the proposed method's robustness to noise and extrapolation ability to
-          (i) learn the behaviors of the system components and their interaction physics and (ii) disambiguate between data trends and mechanistic relationships contained in the system.
+          The alternating direction method of multipliers (ADMM) has gained increasing popularity in embedded model predictive control (MPC) 
+          due to its code simplicity and pain-free parameter selection. However, existing ADMM solvers either target general quadratic programming (QP) 
+          problems or exploit sparse MPC formulations via Riccati recursions, which are inherently sequential and therefore difficult to parallelize for 
+          long prediction horizons. This technical note proposes a novel \textit{parallel-in-horizon} and \textit{construction-free} nonlinear MPC algorithm, 
+          termed $\pi$MPC, which combines a new variable-splitting scheme with a velocity-based system representation in the ADMM framework, 
+          enabling horizon-wise parallel execution while operating directly on system matrices without explicit MPC-to-QP construction.
+          Numerical experiments and accompanying code are provided to validate the effectiveness of the proposed method.
           </p>
         </div>
       </div>
