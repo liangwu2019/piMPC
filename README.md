@@ -1,46 +1,34 @@
-# Neural Differential Algebraic Equations
+# $\pi$MPC: A Parallel-in-horizon and Construction-free NMPC Solver
 
 
-This is the repository for the paper titled **[Learning Neural Differential Algebraic Equations via Operator Splitting](https://arxiv.org/abs/2403.12938)** by James Koch, Madelyn Shapiro, Himanshu Sharma, Draguna Vrabie, and Jan Drgona.
+This is the repository for the paper titled **[$\pi$MPC: A Parallel-in-horizon and Construction-free NMPC Solver](https://arxiv.org/abs/2601.XXXXX)** by Liang Wu, Bo Yang, Yilin Mo, and Jan Drgona.
 
-Neural Differential Algebraic Equations (Neural DAEs) are an extension of the canonical neural timestepper for systems with algebraic constraints. 
-Inspired by fractional-step methods, this work leverages sequential sub-tasks to provide updates for algebraic states and differential states.
+We propose a novel \textit{parallel-in-horizon} and \textit{construction-free} nonlinear MPC algorithm, termed $\pi$MPC, which combines a new variable-splitting scheme with a velocity-based system representation in the ADMM framework, enabling horizon-wise parallel execution while operating directly on system matrices without explicit MPC-to-QP construction. Numerical experiments and accompanying code are provided to validate the effectiveness of the proposed method.
 
 <p align="center">
   <img src="./figs/fig_01.png" width="500">  
 </p>
 
 
-**Simple tutorial example in Neuromancer**
-+ <a target="_blank" href="https://colab.research.google.com/github/pnnl/NeuralDAEs/blob/master/training/tank_dae_example.ipynb">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> Tank-Manifold example using basic Neuromancer abstractions
-
-
-**Training and visualization scripts needed for reproducing all paper results**
-+ [Neuromancer 1.4 with custom modules for DAE integration](https://github.com/pnnl/NeuralDAEs/tree/master/neuromancer-dae)
-+ [Tank-Manifold Property Inference Example](https://github.com/pnnl/NeuralDAEs/blob/master/training/train_manifold.py)
-+ [Tank Network Modeling Example](https://github.com/pnnl/NeuralDAEs/blob/master/training/train_network.py)
 
 ## Cite as
 ```yaml
 @inproceedings{koch2025,
-      title={Learning Neural Differential Algebraic Equations via Operator Splitting}, 
-      author={James Koch and Madelyn Shapiro and Himanshu Sharma and Draguna Vrabie and Jan Drgona},
-      year={2025},
-      eprint={2403.12938},
+      title={$\pi$MPC: A Parallel-in-horizon and Construction-free NMPC Solver}, 
+      author={Liang Wu, Bo Yang, Yilin Mo, and Jan Drgona},
+      year={2026},
+      eprint={2601.XXXXX},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2403.12938}, 
+      url={https://arxiv.org/abs/2601.XXXXX}, 
       volume={},
       number={},
-      booktitle={Conference on Decision and Control (CDC)}, 
 }
 ```
 
-
 ## Acknowledgments
 
-This research was supported by the U.S. Department of Energy through the Building Technologies Office under the Advancing Market-Ready Building Energy Management by Cost-Effective Differentiable Predictive Control projects. PNNL is a multi-program national laboratory operated for the U.S. Department of Energy (DOE) by Battelle Memorial Institute under Contract No. DE-AC05-76RL0-1830.
+This research was supported by the U.S. Department of Energy through the XXX.
 
 <p align="center">
   <img src="figs/PNNL_logo.jpg" width="500">  
