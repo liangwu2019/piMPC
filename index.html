@@ -60,11 +60,11 @@
           <h1 class="title is-1 publication-title">piMPC: A Parallel-in-horizon and Construction-free NMPC Solver</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=wy4RgAEAAAAJ&hl=en">Liang Wu</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=628iWmAAAAAJ&hl=en">Liang Wu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=Wv2PBrUAAAAJ&hl=en">Bo Yang</a><sup>2</sup>,</span>
+              <a href="XXXX">Bo Yang</a><sup>2</sup>,</span>
             <span class="author-block">
-                            <a href="https://scholar.google.com/citations?user=Iq3IfAoAAAAJ&hl=en">Yilin Mo </a><sup>2</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=UcpEexUAAAAJ&hl=en">Yilin Mo </a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://drgona.github.io/">Jan Drgona</a><sup>1</sup>,
             </span>
@@ -117,18 +117,8 @@
 
 
 <section class="section">
-  <div class="container is-max-desktop">
-
-
-    <div class="has-text-centered" style="margin-top: -2.5rem;">
-  <img src="./static/images/intro.png" alt="Neural DAE architecture" style="max-width: 60%; height: auto;" />
-  <p><em>Figure: Schematic of the proposed operator splitting-based Neural Differential Algebraic Equation (DAE) Timestepper.</em></p>
-</div>
-    <br>
-    <br>
-
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+  <!-- Abstract. -->
+  <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
@@ -144,7 +134,7 @@
       </div>
     </div>
   </div>
-    <!--/ Abstract. -->
+<!--/ Abstract. -->
 </section>
 
 
@@ -158,22 +148,18 @@
   <div class="column is-full-width">
     <h2 class="title is-3">Problem Formulation</h2>
     <div class="content has-text-justified">
-      Differential-Algebraic Equations (DAEs) model dynamical systems governed by both differential dynamics and algebraic constraints—common in physical domains with conservation laws or implicit relationships.
-      Traditional neural ODE models fail to capture these algebraic structures, motivating the need for neural architectures that can learn both explicit and implicit dynamics.
-      The goal is to develop a data-driven framework for learning unknown or partially known DAE components from time-series data while maintaining consistency with the system’s inherent physical constraints.
+      XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX 
+      XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX.
 
      <br>
-      We formulate the problem as learning two mappings \( f_\theta \) and \( g_\phi \) that represent the differential and algebraic components of the DAE system in the following parameter estimation problem:
+      XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX
      <br>
       <div style="text-align: center;">
         $$
-        \begin{aligned}
-        &\underset{\theta_f}{\text{minimize}} && \int_{t_0}^{t_N} \left( \|x(t) - \hat{x}(t)\|_2^2 + \|y(t) - \hat{y}(t)\|_2^2 \right) dt \\\\
-        &\text{subject to} &&
-        \dot{x}(t) = f(x(t), y(t), u(t); \theta_f), \\\\
-        & && 0 = g(x(t), y(t), u(t)), \\\\
-        & && x(t_0) = x_0, \quad y(t_0) = y_0,
-        \end{aligned}
+        \min_{U,X}&~ \sum_{k=0}^{N-1}\frac{1}{2}\|Cx_{k+1}-r_y\|_{W_y}^2 + \frac{1}{2}\|u_k- r_u\|_{W_u}^2\\
+        \text{s.t.}&~ x_{k+1} = A_{t,k}x_{k} + B_{t,k}u_k + e_{t,k},~\forall k\in\mathbb{N}_{0}^{N-1}\label{eqn_MPC_b}\\
+        &~ (x_{k+1},u_{k})\in\mathcal{X}\times \mathcal{U}, ~\forall k\in\mathbb{N}_{0}^{N-1}\label{eqn_MPC_c}\\
+        &~ x_0 = x(t),\label{eqn_MPC_d}
         $$
       </div>
       <br>
@@ -188,12 +174,10 @@
   <div class="column is-full-width">
     <h2 class="title is-3">Method</h2>
     <div class="content has-text-justified">
-      We propose a modular neural DAE learning framework that decomposes the DAE system into two components:
-      a neural surrogate for the algebraic solver, and a physics-constrained (gray-box) neural ordinary differential equation (ODE) model.
-      The algebraic states are updated using a trainable neural network, while the differential states evolve via an ODE solver applied to a structured ODE.
+      XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX
 
       <br>
-      The proposed operator splitting strategy is inspired by fractional-step numerical integration and is defined as:
+      XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX is defined as:
       <br>
       <div style="text-align: center;">
         $$
