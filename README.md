@@ -1,7 +1,7 @@
-# $\pi$MPC: A Parallel-in-horizon and Construction-free NMPC Solver
+# $$\pi$$MPC: A Parallel-in-horizon and Construction-free NMPC Solver
 
 
-This is the repository for the paper titled **[$\pi$MPC: A Parallel-in-horizon and Construction-free NMPC Solver](https://arxiv.org/abs/2601.XXXXX)** by Liang Wu, Bo Yang, Yilin Mo, and Jan Drgona.
+This is the repository for the paper titled **[$$\pi$$MPC: A Parallel-in-horizon and Construction-free NMPC Solver](https://arxiv.org/abs/2601.XXXXX)** by Liang Wu, Bo Yang, Yilin Mo, and Jan Drgona.
 
 We propose a novel \textit{parallel-in-horizon} and \textit{construction-free} nonlinear MPC algorithm, termed $\pi$MPC, which combines a new variable-splitting scheme with a velocity-based system representation in the ADMM framework, enabling horizon-wise parallel execution while operating directly on system matrices without explicit MPC-to-QP construction. Numerical experiments and accompanying code are provided to validate the effectiveness of the proposed method.
 
@@ -14,7 +14,7 @@ We propose a novel \textit{parallel-in-horizon} and \textit{construction-free} n
 ## Cite as
 ```yaml
 @inproceedings{koch2025,
-      title={$\pi$MPC: A Parallel-in-horizon and Construction-free NMPC Solver}, 
+      title={$$\pi$$MPC: A Parallel-in-horizon and Construction-free NMPC Solver}, 
       author={Liang Wu, Bo Yang, Yilin Mo, and Jan Drgona},
       year={2026},
       eprint={2601.XXXXX},
@@ -27,13 +27,6 @@ We propose a novel \textit{parallel-in-horizon} and \textit{construction-free} n
 ```
 
 ## Acknowledgments
-
-This research was supported by the U.S. Department of Energy through the XXX.
-
-<p align="center">
-  <img src="figs/PNNL_logo.jpg" width="500">  
-</p>
-
 
 This research was also supported by the Ralph O’Connor Sustainable Energy Institute at Johns Hopkins University.
 
