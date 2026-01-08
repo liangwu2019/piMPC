@@ -125,7 +125,7 @@
           The alternating direction method of multipliers (ADMM) has gained increasing popularity in embedded model predictive control (MPC) 
           due to its code simplicity and pain-free parameter selection. However, existing ADMM solvers either target general quadratic programming (QP) 
           problems or exploit sparse MPC formulations via Riccati recursions, which are inherently sequential and therefore difficult to parallelize for 
-          long prediction horizons. This technical note proposes a novel \textit{parallel-in-horizon} and \textit{construction-free} nonlinear MPC algorithm, 
+          long prediction horizons. This technical note proposes a novel parallel-in-horizon and construction-free nonlinear MPC algorithm, 
           termed $\pi$MPC, which combines a new variable-splitting scheme with a velocity-based system representation in the ADMM framework, 
           enabling horizon-wise parallel execution while operating directly on system matrices without explicit MPC-to-QP construction.
           Numerical experiments and accompanying code are provided to validate the effectiveness of the proposed method.
@@ -156,10 +156,12 @@
      <br>
       <div style="text-align: center;">
         $$
-        \min_{U,X}&~ \sum_{k=0}^{N-1}\frac{1}{2}\|Cx_{k+1}-r_y\|_{W_y}^2 + \frac{1}{2}\|u_k- r_u\|_{W_u}^2\\
-        \text{s.t.}&~ x_{k+1} = A_{t,k}x_{k} + B_{t,k}u_k + e_{t,k},~\forall k\in\mathbb{N}_{0}^{N-1}\label{eqn_MPC_b}\\
-        &~ (x_{k+1},u_{k})\in\mathcal{X}\times \mathcal{U}, ~\forall k\in\mathbb{N}_{0}^{N-1}\label{eqn_MPC_c}\\
-        &~ x_0 = x(t),\label{eqn_MPC_d}
+        \begin{aligned}
+        \min_{U,X}&~ \sum_{k=0}^{N-1}\frac{1}{2}\|Cx_{k+1}-r_y\|_{W_y}^2 + \frac{1}{2}\|u_k- r_u\|_{W_u}^2 \\
+        \text{s.t.}&~ x_{k+1} = A_{t,k}x_{k} + B_{t,k}u_k + e_{t,k},~\forall k\in\mathbb{N}_{0}^{N-1}\\
+        &~ (x_{k+1},u_{k})\in\mathcal{X}\times \mathcal{U}, ~\forall k\in\mathbb{N}_{0}^{N-1} \\
+        &~ x_0 = x(t)
+        \end{aligned}
         $$
       </div>
       <br>
